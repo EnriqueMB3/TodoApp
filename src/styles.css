@@ -1,0 +1,144 @@
+*{
+    box-sizing: border-box;
+   
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    
+
+}
+
+header > .container {
+    display: flex; 
+    height: 120px;
+    background-color: red;
+    justify-content: center;
+    
+}
+
+.container > .imagen-left {
+    
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 20px;
+    background-color: burlywood;
+}
+
+.imagen-left > img {
+    max-height: 90%;
+    max-width: 100%;
+
+}
+
+.information {
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 50px;
+    flex-wrap: wrap;
+    background-color: brown;
+}
+
+.information > h2 {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+
+.navigation {
+    margin-top: 20px;
+}
+
+.navigation > .container  {
+    background-color: #F7F9FB;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.navigation > .container > ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    font-size: 16px;
+    
+}
+
+.Task {
+    margin-top: 20px;
+}
+
+.Task > .container {
+   
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    font-size: 12px;
+    
+}
+
+.left-card {
+    width: 45%;
+    background-color: crimson;
+    margin-left: 20px;
+    margin-right: 30px;
+    height: 100px;
+    max-height: 100%;
+    margin-bottom: 10px;
+    max-width: 100%;
+    
+}
+
+.left-card > .right-x {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 20px;
+    height: 30px;
+}
+
+.left-card > .task-title {
+   display: flex;
+   flex-direction: row;
+   font-size: 16px;
+    align-items: center;
+   padding-left: 10px;
+   height: 30px;
+  
+
+}
+
+.task-title > img {
+    height: 30px;
+    max-height: 100%;
+    width: 35px;
+    max-width: 100%;
+    background-color: aqua;
+    margin-right: 10px;
+}
+
+.task-category {
+    padding-left: 55px;
+   
+}
+
+.task-category > h2 {
+    background-color: sienna;
+}
+
+
+.right-card {
+    width: 45%;
+    background-color: royalblue;
+    margin-left: 30px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    max-width: 100%;
+}

@@ -4,5 +4,9 @@ import ReactDOM from 'react-dom'
 
 import { App } from './App'
 
-ReactDOM.render(<App/>, 
-document.getElementById('app'))
+import {Title} from './Title'
+
+
+ReactDOM.render(<Title/>,
+document.getElementById('app'));
+

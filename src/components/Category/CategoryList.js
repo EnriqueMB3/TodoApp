@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { CategoryItem } from './CategoryItem'
 import List from '@mui/material/List';
+import { TodoContext } from '../../context/TodoContext';
 
 export const CategoryList = () => {
 
@@ -15,14 +16,14 @@ export const CategoryList = () => {
         fontSize: 16
     }
 
-    const arrayCategory = ['Default', 'Escuela', 'Trabajo', 'Amigos', 'Discord', 'Mascotas']
-
+    const {todoState} = useContext(TodoContext);
+  
 
   return (
     <div>
     <List style={flexContainer}>
         {
-            arrayCategory.map((item, idx)=> (
+            todoState.categories.map((item, idx)=> (
                 <CategoryItem key={idx} text={`${item}`} />
             ))
         }

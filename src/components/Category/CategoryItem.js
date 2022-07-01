@@ -2,21 +2,30 @@ import React, { useContext, useState } from 'react'
 import ListItem from '@mui/material/ListItem'
 import { TodoContext } from '../../context/TodoContext'
 import { types } from '../../types/types'
-export const CategoryItem = ({text}) => {
-  
+import { axiosFetch } from '../../helpers/axios'
+export const CategoryItem = ({id, text}) => {
   
   const {todoState, dispatch} = useContext(TodoContext);
   const {categorySelected} = todoState;
   
-  const onSelected = (text) => {
+  const onSelected = async(id, text) => {
     dispatch({
-      type: types.categorySelected,
-      payload: text
-    })
+      type: types.loadingSome,
+      payload: true
+  })
+      dispatch({
+        type: types.categorySelected,
+        payload: text
+      })
+      const resp = text === 'Default'? await axiosFetch(`/Todo`) : await axiosFetch(`/Todo/${text}`) 
     dispatch({
-      type: types.todosByCategory,
-      payload: text
-    })
+      type: types.cargarTodos,
+      payload: resp.data
+    });
+    dispatch({
+      type: types.loadingSome,
+      payload: false
+  })
   }
   
   
@@ -32,7 +41,7 @@ export const CategoryItem = ({text}) => {
 
 
   return (
-    <ListItem style={itemSelected} onClick={ () => onSelected(text)}>
+    <ListItem style={itemSelected} onClick={ () => onSelected(id, text)}>
           {text}
     </ListItem>
   )

@@ -5,5 +5,6 @@ export const types = {
     deleteTodo: '[Todo] Delete Todo',
     categorySelected: '[Category] CategorySelected',
     loadCategories: '[Categories] LoadCategories',
-    todosByCategory: '[TodoByCategory] LoadTodoByCategories'
+    todosByCategory: '[TodoByCategory] LoadTodoByCategories',
+    loadingSome: '[Todo] Loading'
 }

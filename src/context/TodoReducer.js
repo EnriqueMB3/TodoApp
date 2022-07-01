@@ -33,6 +33,16 @@ export const TodoReducer = (state, action) => {
                 ...state,
                 todos: state.todosTotal.filter(todo => todo.category === action.payload)
             }
+        case types.loadCategories:
+            return {
+                ...state,
+                categories: action.payload 
+            }
+        case types.loadingSome:
+            return{
+                ...state,
+                loading: action.payload
+            }
         default:
             return state;
     }
